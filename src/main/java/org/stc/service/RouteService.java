@@ -25,6 +25,22 @@ public class RouteService {
         return repository.findById(id);
     }
 
+    public List<Route> getRoutesByState(String state) {
+        return repository.findByState(state);
+    }
+
+    public List<Route> getRoutesByName(String name) {
+        return repository.findByNameContainingIgnoreCase(name);
+    }
+
+    public List<Route> getRoutesByStyle(String style) {
+        return repository.findByStyle(style);
+    }
+
+    public List<Route> getRoutesByGrade(String grade) {
+        return repository.findByGrade(grade);
+    }
+
     public Route createRoute(Route route) {
         return repository.save(route);
     }
@@ -35,7 +51,7 @@ public class RouteService {
                     route.setName(newRoute.getName());
                     route.setGrade(newRoute.getGrade());
                     route.setCrag(newRoute.getCrag());
-                    route.setNumber(newRoute.getNumber());
+                    route.setState(newRoute.getState());
                     route.setStyle(newRoute.getStyle());
                     route.setUrl(newRoute.getUrl());
                     route.setType(newRoute.getType());

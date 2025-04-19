@@ -24,6 +24,26 @@ public class RouteController {
         return service.getAllRoutes();
     }
 
+    @GetMapping("/state/{state}")
+    public List<Route> getRoutesByState(@PathVariable String state) {
+        return service.getRoutesByState(state);
+    }
+
+    @GetMapping("/name/{name}")
+    public List<Route> getRoutesByName(@PathVariable String name) {
+        return service.getRoutesByName(name);
+    }
+
+    @GetMapping("/style/{style}")
+    public List<Route> getRoutesByStyle(@PathVariable String style) {
+        return service.getRoutesByStyle(style);
+    }
+
+    @GetMapping("/grade/{grade}")
+    public List<Route> getRoutesByGrade(@PathVariable String grade) {
+        return service.getRoutesByGrade(grade);
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<Route> getRouteById(@PathVariable BigInteger id) {
         Optional<Route> route = service.getRouteById(id);

@@ -13,18 +13,18 @@ public class Route {
     private String name;
     private String grade;
     private String crag;
-    private int number;
+    private String state;
     private String style;
     private String url;
     private String type;
 
     public Route(){}
-    public Route(BigInteger id, String name, String grade, String crag, int number, String style, String url, String type) {
+    public Route(BigInteger id, String name, String grade, String crag, String state, String style, String url, String type) {
         this.id = id;
         this.name = name;
         this.grade = grade;
         this.crag = crag;
-        this.number = number;
+        this.state = state;
         this.style = style;
         this.url = url;
         this.type = type;
@@ -62,12 +62,12 @@ public class Route {
         this.crag = crag;
     }
 
-    public int getNumber() {
-        return number;
+    public String getState() {
+        return state;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
+    public void setState(String state) {
+        this.state = state;
     }
 
     public String getStyle() {
